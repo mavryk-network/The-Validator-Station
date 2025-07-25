@@ -1,0 +1,54 @@
+accountsSecretName: accounts-secret
+node_config_network:
+  chain_name: https://testnets.mavryk.network/atlasnet
+accounts:
+  my_baker_account:
+    key: 
+    is_bootstrap_baker_account: false
+
+node_globals:
+  config:
+    shell:
+      history_mode: full
+    rpc:
+      cors-headers: [ "content-type" ]
+      cors-origin: [ "*" ]
+  env:
+    all:
+      # Remove the warning message when calling the node
+      MAVRYK_CLIENT_UNSAFE_DISABLE_DISCLAIMER: "Y"
+  labels:
+    peer_node: "true"
+    rpc_node: "true"
+
+protocols:
+  # Required to vote on Boreas
+  - command: PtBoreas
+    vote:
+      liquidity_baking_toggle_vote: "on"
+      adaptive_issuance_vote: "on"
+
+nodes:
+  my-baking-node:
+    resources:
+      requests:
+        cpu: 1
+        memory: 4096Mi
+      limits:
+        cpu: 2
+        memory: 8192Mi
+    storage_size: 100Gi
+    runs:
+      - mavkit_node
+      - baker
+      - accuser
+    instances:
+      - is_bootstrap_node: false
+        bake_using_accounts:
+          - my_baker_account
+
+# Will fetch the latest testnet snapshot on launch
+full_snapshot_url: https://snapshots.api.mavryk.network/basenet/full
+
+images:
+  mavkit: mavrykdynamics/mavryk:mavkit-v20.3-rc2
