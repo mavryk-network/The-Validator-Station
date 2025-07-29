@@ -22,8 +22,8 @@ cat <<EOF
 EOF
 
 # Get the latest snapshot (uncomment if you want to download automatically)
-# echo "[INFO] Downloading latest snapshot..."
-# wget https://snapshots.api.mavryk.network/basenet/full -O atlasnet.snapshot
+echo "[INFO] Downloading latest snapshot..."
+wget https://snapshots.api.mavryk.network/basenet/full -O atlasnet.snapshot
 
 # Import snapshot
 echo "[INFO] Importing snapshot..."
