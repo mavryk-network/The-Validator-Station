@@ -1,5 +1,14 @@
 # Mavryk Validator Node on Fedora
 
+## ⚠️ IMPORTANT: Fedora Packages Currently Broken
+
+**The Fedora packages in the Mavryk Dynamics COPR repository are currently broken and cannot be used for validator node deployment.** The packages need to be fixed before this installation method can be used.
+
+**Please use one of the following alternatives instead:**
+- **Docker Compose**: Use the `docker/` folder for containerized deployment
+- **Kubernetes**: Use the `kubernetes/` folder for cloud-native deployment  
+- **Ubuntu Packages**: Use the `ubuntu/` folder for native Ubuntu installation
+
 This directory contains configuration and scripts for running a Mavryk validator node (baker) on Fedora using the official Mavryk Dynamics COPR packages.
 
 ## Supported Fedora Versions

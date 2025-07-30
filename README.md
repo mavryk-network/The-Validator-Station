@@ -2,6 +2,11 @@
 
 This repository provides everything you need to bootstrap and run Validator Nodes (bakers) on the Mavryk Blockchain, using Docker Compose, Kubernetes (Helm), or native system packages.
 
+## ⚠️ Fedora Package Disclaimer
+
+**Fedora packages are currently broken and cannot be used at this time.** The packages in the Mavryk Dynamics COPR repository need to be fixed before they can be used for validator node deployment. Please use Docker Compose, Kubernetes, or Ubuntu packages instead.
+
+
 See the full onboarding guide: https://mavrykdynamics.notion.site/validator-onboarding-guide
 
 ## Protocol and Testnet Disclaimer
