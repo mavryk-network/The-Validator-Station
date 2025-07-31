@@ -33,11 +33,12 @@ services:
     container_name: mavkit-baker
     image: mavrykdynamics/mavryk:mavkit-v20.3-rc2
     hostname: mavkit-baker
-    command: mavkit-baker --liquidity-baking-toggle-vote pass --adaptive-issuance-vote on my_baker_account
+    command: mavkit-baker --liquidity-baking-toggle-vote pass --adaptive-issuance-vote on $BAKER_ALIAS
     environment:
       NODE_HOST: mavkit-node
       PROTOCOL: PtBoreas
       MAVRYK_CLIENT_DIR: /var/run/mavryk/client
+      BAKER_ALIAS: ${BAKER_ALIAS}
     volumes:
       - client_data:/var/run/mavryk/client
       - node_data:/var/run/mavryk/node

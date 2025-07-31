@@ -31,6 +31,13 @@ sudo chown -R $USER:$USER /var/run/mavryk
 echo "[INFO] Downloading latest snapshot..."
 curl -L https://snapshots.api.mavryk.network/basenet/full -o atlasnet.snapshot
 
+# Initialize node configuration
+echo "[INFO] Initializing node configuration..."
+mavryk-node config init \
+  --network https://testnets.mavryk.network/atlasnet \
+  -d /var/run/mavryk/node/data \
+  --config-file /var/run/mavryk/node/config.json
+
 # Import snapshot
 echo "[INFO] Importing snapshot..."
 mavryk-node snapshot import ./atlasnet.snapshot \
