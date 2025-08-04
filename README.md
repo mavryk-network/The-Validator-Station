@@ -1,4 +1,4 @@
-# The Validator Station
+# The Validator Station - WIP
 
 This repository provides everything you need to bootstrap and run Validator Nodes (bakers) on the Mavryk Blockchain, using Docker Compose, Kubernetes (Helm), or native system packages.
 
